@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="542.0" prefWidth="858.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.TodoController">
+   <children>
+      <Pane prefHeight="542.0" prefWidth="289.0" style="-fx-background-color: #cecece;">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="542.0" prefWidth="289.0" spacing="5.0">
+               <children>
+                  <Label text="All Todos">
+                     <font>
+                        <Font name="Papyrus" size="22.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="comboTodos" prefHeight="30.0" prefWidth="200.0" promptText="-- select --" />
+                  <ListView fx:id="allTodoList" prefHeight="493.0" prefWidth="289.0" />
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+      <Pane layoutX="289.0" prefHeight="542.0" prefWidth="569.0">
+         <children>
+            <VBox alignment="TOP_CENTER" layoutX="-6.0" layoutY="-3.0" prefHeight="548.0" prefWidth="577.0" spacing="5.0">
+               <children>
+                  <HBox alignment="CENTER" prefWidth="200.0" spacing="40.0">
+                     <children>
+                        <Label text="Add / Update Todo">
+                           <font>
+                              <Font name="Papyrus" size="22.0" />
+                           </font>
+                        </Label>
+                        <Button mnemonicParsing="false" onAction="#handleNewTodo" prefHeight="30.0" style="-fx-background-color: brown;" text="New Todo" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets left="20.0" right="10.0" />
+                     </VBox.margin>
+                  </Separator>
+                  <HBox alignment="CENTER" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Label text="Todo Completed?">
+                           <font>
+                              <Font name="Papyrus" size="12.0" />
+                           </font>
+                        </Label>
+                        <CheckBox fx:id="chboxCompleted" mnemonicParsing="false" text="Completed" textFill="#f57709">
+                           <font>
+                              <Font name="Papyrus" size="11.0" />
+                           </font>
+                        </CheckBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="30.0" right="30.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Label layoutX="194.0" layoutY="10.0" text="Title">
+                     <font>
+                        <Font name="Papyrus" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="titleTF" promptText="Enter title">
+                     <VBox.margin>
+                        <Insets left="30.0" right="30.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label text="Due Date (YYYY-MM-DD)">
+                     <font>
+                        <Font name="Papyrus" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="dateTF" promptText="Enter due date">
+                     <VBox.margin>
+                        <Insets left="30.0" right="30.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label text="Description">
+                     <font>
+                        <Font name="Papyrus" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="descTA" prefHeight="50.0" prefWidth="200.0" promptText="Enter description">
+                     <VBox.margin>
+                        <Insets left="30.0" right="30.0" />
+                     </VBox.margin>
+                  </TextArea>
+                  <HBox alignment="CENTER" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Label text="Add item">
+                           <font>
+                              <Font name="Papyrus" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="itemTF" promptText="Enter item" />
+                        <Button fx:id="btnAddItem" mnemonicParsing="false" onAction="#addTodoItem" text="Add" />
+                     </children>
+                     <padding>
+                        <Insets left="30.0" right="30.0" />
+                     </padding>
+                  </HBox>
+                  <ListView fx:id="itemList" prefHeight="120.0" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets left="30.0" right="30.0" />
+                     </VBox.margin>
+                  </ListView>
+                  <Label text="Click Item to delete" textFill="#f80909">
+                     <font>
+                        <Font name="System Italic" size="10.0" />
+                     </font>
+                  </Label>
+                  <Separator prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets left="30.0" right="30.0" />
+                     </VBox.margin>
+                  </Separator>
+                  <HBox alignment="CENTER" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Button fx:id="btnAddTodo" mnemonicParsing="false" onAction="#handleAddTodo" prefHeight="30.0" style="-fx-background-color: blue;" text="Add Todo" textFill="WHITE" />
+                        <Button fx:id="btnUpdateTodo" disable="true" mnemonicParsing="false" onAction="#handleUpdateTodo" prefHeight="30.0" style="-fx-background-color: green;" text="Update Todo" textFill="WHITE" />
+                        <Button fx:id="btnDeleteTodo" disable="true" mnemonicParsing="false" onAction="#handleDeleteTodo" prefHeight="30.0" style="-fx-background-color: red;" text="Delete" textFill="WHITE" />
+                     </children>
+                     <padding>
+                        <Insets left="30.0" right="30.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

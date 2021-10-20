@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ucf.assignments.TodoTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-07-01T07:12:25" hostname="DESKTOP-B2CGMQS" time="0.044">
+  <properties/>
+  <testcase name="testUpdateMethod" classname="ucf.assignments.TodoTests" time="0.003"/>
+  <testcase name="addTodoMethod" classname="ucf.assignments.TodoTests" time="0.027"/>
+  <testcase name="testDeleteTodo" classname="ucf.assignments.TodoTests" time="0.002"/>
+  <testcase name="checkValidDateMethod" classname="ucf.assignments.TodoTests" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

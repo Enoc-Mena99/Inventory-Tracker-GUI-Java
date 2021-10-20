@@ -1,0 +1,10 @@
+ucf/assignments/ReadWriteFile.java
+ ucf.assignments.ReadWriteFile
+ucf/assignments/Item.java
+ ucf.assignments.Item
+ucf/assignments/Todo.java
+ ucf.assignments.Todo
+ucf/assignments/TodoController.java
+ ucf.assignments.TodoController
+ucf/assignments/Main.java
+ ucf.assignments.Main

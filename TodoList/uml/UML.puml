@@ -1,0 +1,94 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface Initializable
+interface Serializable
+abstract class Application
+
+Serializable <|-- Todo
+Serializable <|-- Item
+Initializable <|-- TodoController
+Application <|-- Main
+Todo o-- Item
+Todo o-- ReadWriteFile
+TodoController o-- Todo
+Main o- TodoController
+
+class Todo {
+    - title: String
+    - dueDate: String
+    - description: String
+    - completed: boolean
+    - items: List
+
+    + Todo(title, description, dueDate, completed)
+    + getTitle(): String
+    + getDescription(): String
+    + getDueDate(): String
+    + isCompleted(): boolean
+    + getItems(): ArrayList
+    + setTitle(title): void
+    + setDescription(description): void
+    + setDueDate(dueDate): void
+    + setCompleted(completed): void
+    + setItems(items): void
+    + toString(): String
+}
+
+class Item {
+    - name: String
+    + Item(name)
+    + getName(): String
+    + setName(name): void
+    + toString(): String
+}
+
+class ReadWriteFile {
+    - filename: String
+    + readFile(): ArrayList
+    + writeToFile(ArrayList<Todo>): void
+}
+
+class TodoController {
+    + allTodoList: ListView<Todo>
+    + chboxCompleted: CheckBox
+    + titleTF: TextField
+    + dateTF: TextField
+    + descTA: TextArea
+    + itemTF: TextField
+    + itemList: ListView<Item>
+    + btnAddItem: Button
+    + btnAddTodo: Button
+    + btnUpdateTodo: Button
+    + btnDeleteTodo: Button
+    + comboTodos: ComboBox<String>
+    - alert: Alert
+    + todos:  List<Todo>
+    - items: ArrayList<Item>
+    - index = -1: int
+    - todo = null: Todo
+    + initialize(URL location, ResourceBundle resources): void
+    + handleAddTodo(ActionEvent actionEvent): void
+    + handleUpdateTodo(ActionEvent actionEvent): void
+    + handleDeleteTodo(ActionEvent actionEvent): void
+    + handleNewTodo(ActionEvent actionEvent): void
+    + addTodoItem(ActionEvent actionEvent): void
+    + addTodo(todo): void
+    + updateTodo(todo): void
+    - clearFields(): void
+    - itemExists(String name): boolean
+    - updateItemList(): void
+    - editTodo(Todo todo): void
+    - deleteTodo(): void
+    - populateTodosList(String choice): void
+    - saveTodo(): void
+    - todoExists(String title): boolean
+    - isDateValid(String date): boolean
+    - showMessage(String msg): void
+ }
+
+class Main {
+    + start(Stage primaryStage): void
+    + main(String[] args): void
+}
+@enduml
